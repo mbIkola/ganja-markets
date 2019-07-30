@@ -12,7 +12,7 @@ import  AppIndex  from './appIndex'
 const store = configureStore()
 
 
-export default class App extends React.Component {
+export class App extends React.Component {
 
   componentWillMount() {
 
@@ -27,9 +27,4 @@ export default class App extends React.Component {
   }
 }
 
-
-
-
-
-
-//AppRegistry.registerComponent('redux', () => ReduxApp)
+export default App;

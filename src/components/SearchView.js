@@ -18,11 +18,11 @@ class SearchView extends Component {
     //this.setState({refreshing: this.props.loading})
   }
 
-  ComponentWillReceiveProps(nextProps){
-   // if (this.state.refreshing == nextProps.loaded){
-   //   this.setState({refreshing: !nextProps.loading})
-   // }
-  }
+  // ComponentWillReceiveProps(nextProps){
+  //  // if (this.state.refreshing == nextProps.loaded){
+  //  //   this.setState({refreshing: !nextProps.loading})
+  //  // }
+  // }
 
   textChange(text){
     this.setState({
@@ -43,8 +43,8 @@ class SearchView extends Component {
       searchString = this.state.text.trim().toLowerCase();
   console.log(coins.length)
   if (searchString.length > 0) {
-    coinName = coins.filter(coin => coin.name.toLowerCase().match( searchString ));
-    coinSymbol = coins.filter(coin => coin.symbol.toLowerCase().match( searchString ));
+    let coinName = coins.filter(coin => coin.name.toLowerCase().match( searchString ));
+    let coinSymbol = coins.filter(coin => coin.symbol.toLowerCase().match( searchString ));
     coins = coinName.concat(coinSymbol.filter(item => coinName.indexOf(item) < 0));
   }
 
@@ -70,7 +70,7 @@ class SearchView extends Component {
                 onRefresh={this.onRefresh.bind(this)}
                 />}>
               {(coins.length==0) && <Text style={styles.textBottom}> loading </Text>}
-              
+
               <FlatList
                 data={coins}
                 renderItem={
@@ -127,9 +127,9 @@ const styles = StyleSheet.create({
     //flex: 1
   },
   textFieldInput: {
-    height: 40, 
-    //borderColor: 'gray', 
-    //borderWidth: 1, 
+    height: 40,
+    //borderColor: 'gray',
+    //borderWidth: 1,
     color: 'white'
 
   },
@@ -137,8 +137,8 @@ const styles = StyleSheet.create({
     height: 40,
     paddingTop: 7,
     paddingLeft: 7,
-    //borderColor: 'gray', 
-    //borderWidth: 1, 
+    //borderColor: 'gray',
+    //borderWidth: 1,
     borderBottomColor: 'grey',
     borderBottomWidth: .75,
     //flex: 1

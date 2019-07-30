@@ -110,21 +110,21 @@ export default class UserHolding extends React.Component {
 
 
       render(){
-      var usd_value = this.state.total_usd;
-      var btc_value = this.state.btc_value;
-      var change = this.state.change * usd_value;
-      var textHolder = this.state.holding;
-      var inList = this.checkList();
-      var color =  change > 0 ? '#03C9A9' : '#D64541';
-      colorChange = function() {
+        const usd_value = this.state.total_usd;
+        const btc_value = this.state.btc_value;
+        const change = this.state.change * usd_value;
+        const textHolder = this.state.holding;
+        const inList = this.checkList();
+        const color = change > 0 ? '#03C9A9' : '#D64541';
+        let colorChange = function() {
         return {
             color: color
           };
       };
-      var newValue = this.state.text * this.state.price_usd
+        const newValue = this.state.text * this.state.price_usd;
 
 
-      return (
+        return (
 
         <View style={styles.container}>
         { inList && <View>

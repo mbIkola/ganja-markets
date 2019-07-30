@@ -8,8 +8,8 @@ class CoinInformation extends React.Component {
   constructor(props) {
         super(props);
         this.state = {
-          change: 0, 
-          loaded: false, 
+          change: 0,
+          loaded: false,
           color: '#000000'
         };
       }
@@ -65,9 +65,6 @@ class CoinInformation extends React.Component {
           </TouchableHighlight>
 
         </View>
-
-
-
       );
     }
 }
@@ -136,7 +133,6 @@ const styles = StyleSheet.create({
 function mapStateToProps (state) {
   return {
     coinInfo: state.coinInfo
-
   }
 }
 

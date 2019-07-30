@@ -24,6 +24,65 @@ import { connect } from 'react-redux';
 import { fetchCoinsFromAPI, fetchCoinInfoFromAPI, fetchCoinHistoryFromAPI, changeCoinHistorySuccess, fetchHomeView, fetchCoinListFromAPI, fetchInitialData, fetchCoinView, fetchMarketCapFromAPI, getSearchView, addCoinToUserList, removeCoinfromUserList, updateUserCoinList, forceRehydrate } from './actions';
 
 
+const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: '#000000',
+    marginTop: 0,
+    flex: 1
+  },
+  bodyContainer: {
+    paddingTop: 50
+  },
+  container: {
+    marginTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+  text: {
+    textAlign: 'center',
+    height: 60,
+    paddingTop: 10,
+    fontSize: 20,
+    color: 'grey',
+    fontFamily: 'HelveticaNeue-Thin'
+
+  },
+  textPrice: {
+    textAlign: 'center',
+    fontSize: 35,
+    color: '#ffffff',
+    paddingTop: 18,
+    fontFamily: 'HelveticaNeue-Thin'
+  },
+  button: {
+    height: 60,
+    //paddingTop: 7,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'grey',
+    borderRadius: 7
+  },
+  buttonText: {
+    color: 'black',
+    textAlign: 'center',
+
+  },
+  textHeader: {
+    textAlign: 'left',
+    fontSize: 24,
+    paddingLeft: 10,
+    color: 'white',
+    paddingTop: 20,
+    fontFamily: 'HelveticaNeue-Thin'
+  },
+  bottomBorder: {
+    borderBottomColor: 'grey',
+    borderBottomWidth: 1,
+    paddingBottom: 10,
+  },
+})
+
+
 
 
 class AppIndex extends Component {
@@ -40,7 +99,7 @@ class AppIndex extends Component {
 
 
   getInitialData () {
-    props.getCoinInfo(props.coinInfo, props.coinData.time);
+    this.props && this.props.getCoinInfo(this.props.coinInfo, this.props.coinData.time);
   };
 
   render(){
@@ -126,72 +185,6 @@ class AppIndex extends Component {
     </View>
   )
 }}
-
-styles = StyleSheet.create({
-  mainContainer: {
-    backgroundColor: '#000000',
-    marginTop: 0,
-    flex: 1
-  },
-  bodyContainer: {
-    paddingTop: 50
-  },
-  container: {
-    marginTop: 10,
-    paddingLeft: 10,
-    paddingRight: 10
-  },
-  text: {
-    textAlign: 'center',
-    height: 60,
-    paddingTop: 10,
-    fontSize: 20,
-    color: 'grey',
-    fontFamily: 'HelveticaNeue-Thin'
-
-  },
-  textHeader: {
-    textAlign: 'left',
-    fontSize: 28,
-    color: '#ffffff',
-    paddingTop: 15,
-    fontFamily: 'HelveticaNeue-Thin'
-  },
-  textPrice: {
-    textAlign: 'center',
-    fontSize: 35,
-    color: '#ffffff',
-    paddingTop: 18,
-    fontFamily: 'HelveticaNeue-Thin'
-  },
-  button: {
-    height: 60,
-    //paddingTop: 7,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'grey',
-    borderRadius: 7
-  },
-  buttonText: {
-    color: 'black',
-    textAlign: 'center',
-
-  },
-  textHeader: {
-    textAlign: 'left',
-    fontSize: 24,
-    paddingLeft: 10,
-    color: 'white',
-    paddingTop: 20,
-    fontFamily: 'HelveticaNeue-Thin'
-  },
-  bottomBorder: {
-    borderBottomColor: 'grey',
-    borderBottomWidth: 1,
-    paddingBottom: 10,
-  },
-})
-
 
 
 function mapStateToProps (state) {

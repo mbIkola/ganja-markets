@@ -1,15 +1,15 @@
 
 import React, { Component } from 'react';
-import { 
-  View, 
-  Text, 
-  StyleSheet, 
-  TouchableHighlight, 
-  TouchableOpacity, 
-  ScrollView, 
-  Dimensions, 
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableHighlight,
+  TouchableOpacity,
+  ScrollView,
+  Dimensions,
   PanResponder,
-  Animated 
+  Animated
     } from 'react-native';
 
 import moment from 'moment'
@@ -32,13 +32,13 @@ class StockLineChartBasic extends Component {
           width: 0,
           data: [[{x: 0, y: 0}]],
           ratio: 0,
-          indexVarable: 0, 
+          indexVarable: 0,
           time: '1d',
           price: 0,
           active: false,
           xCoordinate: 0,
           pan: new Animated.ValueXY(),
-          date: '', 
+          date: '',
 
         };
       }
@@ -53,7 +53,7 @@ class StockLineChartBasic extends Component {
 
     let utcSeconds = data[Number((indexVarable).toFixed(0))].time
     //console.log(moment.utc(utcSeconds*1000).local().format('ddd, ll')); // The 0 there is the key, which sets the date to the epoch
-    
+
     this.setState({
       price: data[Number((indexVarable).toFixed(0))].y,
       date: moment.utc(utcSeconds*1000).local().format("h:mm A, ddd, ll")
@@ -152,13 +152,13 @@ componentWillMount() {
     let imageStyle = {transform: [{translateX}, {translateY}]};
 
 
-    colorChange = function(change) {
+    let colorChange = function(change) {
       return {
         color: change
         }
       }
 
-    timelinePosition = function(number){
+    let timelinePosition = function(number){
       return {
         paddingLeft: number,
       }
@@ -239,7 +239,7 @@ componentWillMount() {
                 </View>
                 <View style={styles.graphOverlay}>
                   <SmoothLine data={this.state.data} options={options} xKey='x' yKey='y' />
-                </View> 
+                </View>
             </View>
           :
           <View style = {styles.errorBox}><Text style ={styles.errorText}>loading</Text></View>
@@ -353,7 +353,7 @@ const styles = StyleSheet.create({
   panContainer: {
     flex: 1,
     height: 220,
-    zIndex: 1, 
+    zIndex: 1,
     //position: 'absolute',
     //justifyContent: 'center',
     //alignItems: 'center',
@@ -368,7 +368,7 @@ const styles = StyleSheet.create({
     //paddingLeft: 10,
     //color: 'grey',
     //borderRightColor: 'grey',
-    //borderRightWidth: 1, 
+    //borderRightWidth: 1,
     height: 200,
     width: 2,
     backgroundColor: 'grey',
@@ -377,7 +377,7 @@ const styles = StyleSheet.create({
     },
     graphOverlay: {
     //alignSelf: 'stretch'
-    zIndex: 0, 
+    zIndex: 0,
     position: 'absolute'
     },
   graph: {

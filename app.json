@@ -1,30 +1,30 @@
 
 {
    "expo": {
-    "name": "tokendex",
+    "name": "ganjamarkets",
     "icon": "./icon.png",
     "version": "1.0.0",
-    "slug": "tokendex",
+    "slug": "filmon-ganjamarkets",
     "sdkVersion": "18.0.0",
-    orientation: "portrait",
-    loading: {
-      icon: "",
-      backgroundColor: "#000000",
-      exponentIconGrayscale: 0,
-      backgroundImage: "./iPhone.png",
-      hideExponentText: true,
-      splash: {
-        backgroundColor: "#000000",
-        image: {
-          backgroundImage: "./iPhone.png"
+    "orientation": "portrait",
+    "loading": {
+      "icon": "",
+      "backgroundColor": "#000000",
+      "exponentIconGrayscale": 0,
+      "backgroundImage": "./iPhone.png",
+      "hideExponentText": true,
+      "splash": {
+        "backgroundColor": "#000000",
+        "image": {
+          "backgroundImage": "./iPhone.png"
         }
       }
     },
     "ios": {
-      "bundleIdentifier": "com.github.msenejoa"
+      "bundleIdentifier": "com.filmon.ganjamarkets"
     },
     "android": {
-      "package": "com.yourcompany.yourappname"
+      "package": "com.filmon.ganjamarkets"
     }
    }
  }

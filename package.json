@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "0.0.40",
-    "jest-expo": "~18.0.0",
-    "react-test-renderer": "16.0.0-alpha.12",
-    "babel-jest": "19.0.0",
-    "babel-preset-react-native": "1.9.1"
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "babel-preset-react-native": "^4.0.1",
+    "jest-expo": "^34.0.0",
+    "react-native-scripts": "^2.0.1",
+    "react-test-renderer": "^16.8.6"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "mainNative": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "main": "./src/index.js",
   "scripts": {
     "start": "react-native-scripts start",
     "eject": "react-native-scripts eject",
@@ -23,18 +24,33 @@
   "dependencies": {
     "apsl-react-native-button": "^3.0.2",
     "es6-promise": "^4.1.1",
-    "expo": "^18.0.3",
+    "expo": "^34.0.2",
     "isomorphic-fetch": "^2.2.1",
-    "npm": "^4.6.1",
-    "react": "16.0.0-alpha.12",
-    "react-native": "^0.45.1",
+    "npm": "^6.10.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native": "^0.60.4",
     "react-native-button": "^2.1.0",
-    "react-native-pathjs-charts": "0.0.29",
-    "react-native-svg": "^5.2.0",
-    "react-redux": "^5.0.4",
-    "redux": "^3.6.0",
+    "react-native-pathjs-charts": "0.0.34",
+    "react-native-svg": "^9.5.3",
+    "react-native-web": "^0.11.5",
+    "react-redux": "^7.1.0",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
-    "redux-persist": "^4.8.2",
+    "redux-persist": "^5.10.0",
     "redux-thunk": "^2.2.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
